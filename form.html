@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript" src="http://localhost/testess/blJs.js"></script>
+
+</head>
+<body>
+<div><a href="index.html">Home</a> | <a href="preco.html">Preços</a> | <a href="form.html">Contato</a></div><br>
+<script type="text/javascript">
+
+//Esconde a Div
+createCookie('ppkcookie','testcookie',7);
+
+getURL();
+getDataHora();
+
+
+//Remove o atributo style da tag em 2 segundos fazendo aparecer a Div com a frase contida nela
+//setTimeout(function(){$("div").reset()}, 2000);
+</script>
+
+<form name="meu_form"> 
+	<h1>Entre em contato</h1> 
+		<p class="nome"> 
+			<label for="nome">Nome</label> 
+			<input type="text" id="nomeid" placeholder="Tiago Vale" required="required" name="nome" /> 
+		</p> 
+		
+		<p class="fone"> 
+			<label for="fone">Fone</label> 
+			<input type="text" id="foneid" placeholder="(xx)xx-xx-xx-xx" name="fone" /> 
+		</p> 
+		
+		<p> 
+			<label for="email">Email</label> 
+			<input type="email" id="emailid" placeholder="fulano@mail.com" name="email" /> 
+		</p> 
+		
+		<p> 
+			<textarea placeholder="Deixe sua opnião"></textarea> 
+		</p>
+
+		<p class="submit"> 
+			<input type="submit" onclick="Enviar();" value="Enviar" /> 
+		</p> 
+</form>
+
+</body>
+</html>
