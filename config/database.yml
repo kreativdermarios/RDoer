@@ -27,7 +27,7 @@ default: &default
 
 development:
   <<: *default
-  database: teste_development
+  database: mac
   adapter: postgresql
   encoding: unicode
   pool: 5
