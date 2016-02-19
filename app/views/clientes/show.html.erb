@@ -9,6 +9,18 @@
   <dt><strong><%= model_class.human_attribute_name(:categoria) %>:</strong></dt>
   <dd><%= @cliente.categoria %></dd>
 </dl>
+<hr>
+
+<ul>
+  <% @cliente.acessos.each do |acesso| %>
+
+  <li><%= "#{acesso.id_acesso } - #{acesso.url } - #{acesso.created_at}" %></li>
+
+  <% end %>
+</ul>
+<hr>
+<br>
+<br>
 
 <%= link_to t('.back', :default => t("helpers.links.back")),
               clientes_path, :class => 'btn btn-default'  %>

@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  resources :acessos
   resources :clientes do
 
     collection do
