@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  resources :contatos
   resources :acessos
   resources :clientes do
 
@@ -10,7 +11,8 @@ Rails.application.routes.draw do
   end
 
   get  'inicio/:nome/:categoria' => 'welcome#create'
-  post 'dados' => 'welcome#create'
+  post 'dados' => 'contato#create'
+
 
 root :to => "clientes#index"
 
