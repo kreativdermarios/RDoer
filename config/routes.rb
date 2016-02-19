@@ -9,7 +9,8 @@ Rails.application.routes.draw do
     end
   end
 
-  get 'inicio/:nome/:categoria' => 'welcome#create' 
+  get  'inicio/:nome/:categoria' => 'welcome#create'
+  post 'dados' => 'welcome#create'
 
 root :to => "clientes#index"
 
