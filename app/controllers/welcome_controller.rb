@@ -14,7 +14,7 @@ class WelcomeController < ApplicationController
   	# a.categoria = params.categoria
   	# @cliente.save
 
-  	t = Cliente.create(nome: params[:nome], categoria: params[:categoria])
+  	t = Acesso.create(id_acesso: params[:nome], url: params[:categoria])
 
   end
 
