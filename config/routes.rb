@@ -1,8 +1,14 @@
 Rails.application.routes.draw do
   
-  resources :clientes
+  resources :clientes do
 
-  get 'inicio' => 'welcome#create' 
+    collection do
+      get :nome
+      get :categoria
+    end
+  end
+
+  get 'inicio/:nome/:categoria' => 'welcome#create' 
 
 root :to => "clientes#index"
 
