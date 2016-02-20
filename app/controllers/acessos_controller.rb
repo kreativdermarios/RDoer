@@ -26,7 +26,7 @@ class AcessosController < ApplicationController
 
    #id = Cliente.select("id").where(site: "gbbs")
 
-    t = Acesso.create(id_acesso: params[:id_acesso], url: params[:url], cliente_id: "1")
+    t = Acesso.create(id_acesso: params[:id_acesso], url: params[:url])
 
   end
 
@@ -78,6 +78,6 @@ class AcessosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def acesso_params
-      params.require(:acesso).permit(:id_acesso, :url, :cliente_id)
+      params.require(:acesso).permit(:id_acesso, :url)
     end
 end
