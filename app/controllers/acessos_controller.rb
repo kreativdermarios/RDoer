@@ -21,6 +21,12 @@ class AcessosController < ApplicationController
   def edit
   end
 
+  def getdatasites
+
+    t = Acesso.create(id_acesso: params[:id_acesso], url: params[:urlsite])
+
+  end
+
   # POST /acessos
   # POST /acessos.json
   def create

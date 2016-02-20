@@ -2,16 +2,10 @@ Rails.application.routes.draw do
   
   resources :contatos
   resources :acessos
-  resources :clientes do
+  resources :clientes 
 
-    collection do
-      get :nome
-      get :categoria
-    end
-  end
+  get  'dados/:id_acesso/:url' => 'acessos#getdatasites'
 
-  get  'inicio/:nome/:categoria' => 'welcome#create'
-  post 'dados' => 'contato#create'
 
 
 root :to => "clientes#index"
