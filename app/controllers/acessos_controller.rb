@@ -23,10 +23,11 @@ class AcessosController < ApplicationController
 
   def getdatasites
 
+   hostname = params[:hostname]
 
-   #id = Cliente.select("id").where(site: "gbbs")
+   cliente = Cliente.select("id").where(site: hostname).first
 
-    t = Acesso.create(id_acesso: params[:id_acesso], url: params[:url])
+   t = Acesso.create(id_acesso: params[:id_acesso], url: params[:url], cliente_id: cliente.id )
 
   end
 
@@ -78,6 +79,6 @@ class AcessosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def acesso_params
-      params.require(:acesso).permit(:id_acesso, :url)
+      params.require(:acesso).permit(:id_acesso, :url, :cliente_id)
     end
 end

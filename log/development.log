@@ -37774,3 +37774,287 @@ Processing by AcessosController#index as HTML
   [1m[36mAcesso Load (0.3ms)[0m  [1mSELECT "acessos".* FROM "acessos"[0m
   Rendered acessos/index.html.erb within layouts/application (6.2ms)
 Completed 200 OK in 101ms (Views: 99.9ms | ActiveRecord: 0.3ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (28.9ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'acessos'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.9ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'clientes'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (1.8ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'contatos'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+
+
+Started GET "/contatos/2/edit" for ::1 at 2016-02-20 21:20:24 -0200
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ContatosController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mContato Load (0.5ms)[0m  SELECT  "contatos".* FROM "contatos" WHERE "contatos"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mAcesso Load (0.8ms)[0m  [1mSELECT "acessos".* FROM "acessos"[0m
+  Rendered contatos/_form.html.erb (181.1ms)
+  Rendered contatos/edit.html.erb within layouts/application (267.8ms)
+Completed 200 OK in 1359ms (Views: 1291.8ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/assets/twitter-bootstrap-static/bootstrap.self-603f330c29af013305325569c8c75d03d688963abd8cde4fffec17b5ce417bfb.css?body=1" for ::1 at 2016-02-20 21:20:26 -0200
+
+
+Started GET "/assets/bootstrap_and_overrides.self-2cb3834583dfbaf0a39c7139750bf963e05d79cbe811126997e013400be5d8dc.css?body=1" for ::1 at 2016-02-20 21:20:26 -0200
+
+
+Started GET "/assets/contatos.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-20 21:20:26 -0200
+
+
+Started GET "/assets/clientes.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-20 21:20:26 -0200
+
+
+Started GET "/assets/acessos.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-20 21:20:26 -0200
+
+
+Started GET "/assets/twitter-bootstrap-static/fontawesome.self-2fe4f8a61d73606fbcb036b41f380591906a4da65a9eb5ec0a210fe6980b2ca7.css?body=1" for ::1 at 2016-02-20 21:20:26 -0200
+
+
+Started GET "/assets/scaffolds.self-04d8c6ba58bb41094cf43f6a1a2e832f1bd9037f49aeac8d43edaa4579c8744e.css?body=1" for ::1 at 2016-02-20 21:20:26 -0200
+
+
+Started GET "/assets/welcome.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-02-20 21:20:26 -0200
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-02-20 21:20:26 -0200
+
+
+Started GET "/assets/jquery.self-c64a74367bda6ef8b860f19e74df08927ca99d2be2ac934e9e92d5fd361e0da4.js?body=1" for ::1 at 2016-02-20 21:20:26 -0200
+
+
+Started GET "/assets/jquery_ujs.self-d602bdfe68ffc63b9f9cc512872aa3cfff046228a0a36e90dd476e8ef54c1b09.js?body=1" for ::1 at 2016-02-20 21:20:26 -0200
+
+
+Started GET "/assets/twitter/bootstrap/transition.self-09ff30b1e8a93d1f7728b9855f55d9c9d8d5734c8861e0d8139994e50944572a.js?body=1" for ::1 at 2016-02-20 21:20:26 -0200
+
+
+Started GET "/assets/twitter/bootstrap/alert.self-a29e91e8cd3ddaba9bbc466901d53ec2127e9256b9b941905d525a3a716bd1a5.js?body=1" for ::1 at 2016-02-20 21:20:26 -0200
+
+
+Started GET "/assets/twitter/bootstrap/modal.self-72f95ffa1071297725a9ac91989693d56d1abf23f441a47455073b0da2857a5b.js?body=1" for ::1 at 2016-02-20 21:20:26 -0200
+
+
+Started GET "/assets/twitter/bootstrap/dropdown.self-9314126777c6be5443e37ea7f7967d7914d72b3e60449ba50edc967446373059.js?body=1" for ::1 at 2016-02-20 21:20:26 -0200
+
+
+Started GET "/assets/twitter/bootstrap/scrollspy.self-a155b9d4b2f978905f0326c0f6635e1134fe91c6bfbfcbad079fa24a9fef2b0e.js?body=1" for ::1 at 2016-02-20 21:20:26 -0200
+
+
+Started GET "/assets/twitter/bootstrap/tab.self-122235057fbd4c6c7da377d59dc58f47b44cb1088a2e38e6ee6ce9d8ac29a26a.js?body=1" for ::1 at 2016-02-20 21:20:26 -0200
+
+
+Started GET "/assets/twitter/bootstrap/tooltip.self-11cf547be953f25f511cec668f6690473fd97b2f65502e4032f4030999a3f0c3.js?body=1" for ::1 at 2016-02-20 21:20:26 -0200
+
+
+Started GET "/assets/twitter/bootstrap/popover.self-77d8e3a2499c1104ef146396a68b82469ee2bdb365199b874694698d10405e9a.js?body=1" for ::1 at 2016-02-20 21:20:26 -0200
+
+
+Started GET "/assets/twitter/bootstrap/button.self-a6cb16785434acb365ae426aef9f1fce05ed553cae7a965e4471c3da71509175.js?body=1" for ::1 at 2016-02-20 21:20:26 -0200
+
+
+Started GET "/assets/twitter/bootstrap/collapse.self-7dc8bfbc2fbfabd2bad62c58ff8ffeaf8f20fb87c7ca6cd35f06d4dc19632587.js?body=1" for ::1 at 2016-02-20 21:20:26 -0200
+
+
+Started GET "/assets/twitter/bootstrap/carousel.self-57eb8422043cf0a85b7a9dc6843916eb0a3e35b419c7798a5eb254b918997631.js?body=1" for ::1 at 2016-02-20 21:20:26 -0200
+
+
+Started GET "/assets/twitter/bootstrap/affix.self-d2b642d8fbfc1d7041e2edefd66683ada567a980789dcd6f94fddda0b33408b5.js?body=1" for ::1 at 2016-02-20 21:20:26 -0200
+
+
+Started GET "/assets/twitter/bootstrap.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2016-02-20 21:20:26 -0200
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-02-20 21:20:26 -0200
+
+
+Started GET "/assets/acessos.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-20 21:20:26 -0200
+
+
+Started GET "/assets/bootstrap.self-fdc98dee79ee88255e10cac6caa91338165cb76cf0d263744d8d90011fc2ef8f.js?body=1" for ::1 at 2016-02-20 21:20:26 -0200
+
+
+Started GET "/assets/clientes.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-20 21:20:26 -0200
+
+
+Started GET "/assets/contatos.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-20 21:20:26 -0200
+
+
+Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-02-20 21:20:26 -0200
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2016-02-20 21:20:26 -0200
+
+
+Started GET "/acessos" for ::1 at 2016-02-20 21:20:28 -0200
+Processing by AcessosController#index as HTML
+  [1m[35mAcesso Load (0.4ms)[0m  SELECT "acessos".* FROM "acessos"
+  Rendered acessos/index.html.erb within layouts/application (28.0ms)
+Completed 200 OK in 118ms (Views: 116.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/acessos/91/edit" for ::1 at 2016-02-20 21:20:31 -0200
+Processing by AcessosController#edit as HTML
+  Parameters: {"id"=>"91"}
+  [1m[36mAcesso Load (0.3ms)[0m  [1mSELECT  "acessos".* FROM "acessos" WHERE "acessos"."id" = $1 LIMIT 1[0m  [["id", 91]]
+  [1m[35mCliente Load (0.6ms)[0m  SELECT "clientes".* FROM "clientes"
+  Rendered acessos/_form.html.erb (27.4ms)
+  Rendered acessos/edit.html.erb within layouts/application (33.1ms)
+Completed 200 OK in 122ms (Views: 118.5ms | ActiveRecord: 2.0ms)
+
+
+Started PATCH "/acessos/91" for ::1 at 2016-02-20 21:20:38 -0200
+Processing by AcessosController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JU5rueoqwdvDdXPSSQj4FRSRFumSSJ1JNwwkHVfugE/4KGItWSsoipkA3Sag/eSHVIN6X6zGVSfqgv9hE7IHUg==", "acesso"=>{"id_acesso"=>"aaa", "url"=>"bbb", "cliente_id"=>"3"}, "commit"=>"Update Acesso", "id"=>"91"}
+  [1m[36mAcesso Load (0.3ms)[0m  [1mSELECT  "acessos".* FROM "acessos" WHERE "acessos"."id" = $1 LIMIT 1[0m  [["id", 91]]
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (24.8ms)[0m  [1mUPDATE "acessos" SET "cliente_id" = $1, "updated_at" = $2 WHERE "acessos"."id" = $3[0m  [["cliente_id", 3], ["updated_at", "2016-02-20 23:20:38.444594"], ["id", 91]]
+  [1m[35m (12.3ms)[0m  COMMIT
+Redirected to http://localhost:3000/acessos/91
+Completed 302 Found in 74ms (ActiveRecord: 37.6ms)
+
+
+Started GET "/acessos/91" for ::1 at 2016-02-20 21:20:38 -0200
+Processing by AcessosController#show as HTML
+  Parameters: {"id"=>"91"}
+  [1m[36mAcesso Load (0.3ms)[0m  [1mSELECT  "acessos".* FROM "acessos" WHERE "acessos"."id" = $1 LIMIT 1[0m  [["id", 91]]
+  [1m[35mContato Load (0.3ms)[0m  SELECT "contatos".* FROM "contatos" WHERE "contatos"."acesso_id" = $1  [["acesso_id", 91]]
+  Rendered acessos/show.html.erb within layouts/application (34.9ms)
+Completed 200 OK in 109ms (Views: 107.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/acessos" for ::1 at 2016-02-20 21:20:41 -0200
+Processing by AcessosController#index as HTML
+  [1m[36mAcesso Load (0.3ms)[0m  [1mSELECT "acessos".* FROM "acessos"[0m
+  Rendered acessos/index.html.erb within layouts/application (26.6ms)
+Completed 200 OK in 101ms (Views: 99.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/acessos/91" for ::1 at 2016-02-20 21:20:46 -0200
+Processing by AcessosController#show as HTML
+  Parameters: {"id"=>"91"}
+  [1m[35mAcesso Load (0.2ms)[0m  SELECT  "acessos".* FROM "acessos" WHERE "acessos"."id" = $1 LIMIT 1  [["id", 91]]
+  [1m[36mContato Load (0.3ms)[0m  [1mSELECT "contatos".* FROM "contatos" WHERE "contatos"."acesso_id" = $1[0m  [["acesso_id", 91]]
+  Rendered acessos/show.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 84ms (Views: 83.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/acessos" for ::1 at 2016-02-20 21:20:48 -0200
+Processing by AcessosController#index as HTML
+  [1m[35mAcesso Load (0.3ms)[0m  SELECT "acessos".* FROM "acessos"
+  Rendered acessos/index.html.erb within layouts/application (28.0ms)
+Completed 200 OK in 114ms (Views: 113.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/acessos/77" for ::1 at 2016-02-20 21:20:50 -0200
+Processing by AcessosController#show as HTML
+  Parameters: {"id"=>"77"}
+  [1m[36mAcesso Load (0.2ms)[0m  [1mSELECT  "acessos".* FROM "acessos" WHERE "acessos"."id" = $1 LIMIT 1[0m  [["id", 77]]
+  [1m[35mContato Load (0.3ms)[0m  SELECT "contatos".* FROM "contatos" WHERE "contatos"."acesso_id" = $1  [["acesso_id", 77]]
+  Rendered acessos/show.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 72ms (Views: 70.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/acessos/1" for ::1 at 2016-02-20 21:20:55 -0200
+Processing by AcessosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAcesso Load (0.3ms)[0m  [1mSELECT  "acessos".* FROM "acessos" WHERE "acessos"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mContato Load (0.2ms)[0m  SELECT "contatos".* FROM "contatos" WHERE "contatos"."acesso_id" = $1  [["acesso_id", 1]]
+  Rendered acessos/show.html.erb within layouts/application (24.1ms)
+Completed 200 OK in 98ms (Views: 96.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/contatos" for ::1 at 2016-02-20 21:21:07 -0200
+Processing by ContatosController#index as HTML
+  [1m[36mContato Load (0.4ms)[0m  [1mSELECT "contatos".* FROM "contatos"[0m
+  Rendered contatos/index.html.erb within layouts/application (11.6ms)
+Completed 200 OK in 107ms (Views: 105.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/acessos" for ::1 at 2016-02-20 21:21:10 -0200
+Processing by AcessosController#index as HTML
+  [1m[35mAcesso Load (0.5ms)[0m  SELECT "acessos".* FROM "acessos"
+  Rendered acessos/index.html.erb within layouts/application (27.6ms)
+Completed 200 OK in 121ms (Views: 119.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/acessos/77" for ::1 at 2016-02-20 21:21:15 -0200
+Processing by AcessosController#show as HTML
+  Parameters: {"id"=>"77"}
+  [1m[36mAcesso Load (0.4ms)[0m  [1mSELECT  "acessos".* FROM "acessos" WHERE "acessos"."id" = $1 LIMIT 1[0m  [["id", 77]]
+  [1m[35mContato Load (0.2ms)[0m  SELECT "contatos".* FROM "contatos" WHERE "contatos"."acesso_id" = $1  [["acesso_id", 77]]
+  Rendered acessos/show.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 84ms (Views: 82.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/acessos/1" for ::1 at 2016-02-20 21:21:18 -0200
+Processing by AcessosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAcesso Load (0.2ms)[0m  [1mSELECT  "acessos".* FROM "acessos" WHERE "acessos"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mContato Load (0.2ms)[0m  SELECT "contatos".* FROM "contatos" WHERE "contatos"."acesso_id" = $1  [["acesso_id", 1]]
+  Rendered acessos/show.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 70ms (Views: 68.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/acessos/91" for ::1 at 2016-02-20 21:21:23 -0200
+Processing by AcessosController#show as HTML
+  Parameters: {"id"=>"91"}
+  [1m[36mAcesso Load (0.2ms)[0m  [1mSELECT  "acessos".* FROM "acessos" WHERE "acessos"."id" = $1 LIMIT 1[0m  [["id", 91]]
+  [1m[35mContato Load (0.2ms)[0m  SELECT "contatos".* FROM "contatos" WHERE "contatos"."acesso_id" = $1  [["acesso_id", 91]]
+  Rendered acessos/show.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 79ms (Views: 77.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/contatos" for ::1 at 2016-02-20 21:21:28 -0200
+Processing by ContatosController#index as HTML
+  [1m[36mContato Load (0.3ms)[0m  [1mSELECT "contatos".* FROM "contatos"[0m
+  Rendered contatos/index.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 100ms (Views: 99.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/contatos/2" for ::1 at 2016-02-20 21:21:34 -0200
+Processing by ContatosController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mContato Load (0.3ms)[0m  SELECT  "contatos".* FROM "contatos" WHERE "contatos"."id" = $1 LIMIT 1  [["id", 2]]
+  Rendered contatos/show.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 82ms (Views: 81.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/contatos/3" for ::1 at 2016-02-20 21:21:37 -0200
+Processing by ContatosController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mContato Load (0.3ms)[0m  [1mSELECT  "contatos".* FROM "contatos" WHERE "contatos"."id" = $1 LIMIT 1[0m  [["id", 3]]
+  Rendered contatos/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 75ms (Views: 74.1ms | ActiveRecord: 0.3ms)

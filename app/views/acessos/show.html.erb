@@ -14,12 +14,15 @@
 <hr>
 
 <ul>
-  <% @contato.contatos.each do |contato| %>
+  <% @acesso.contato.each do |contato| %>
 
-  <li><%= "#{contato.id_acesso } - #{contato.url } - #{contato.created_at}" %></li>
+  <li><%= "#{contato.nome } - #{contato.email } - #{contato.created_at}" %></li>
 
   <% end %>
 </ul>
+<hr>
+<br>
+<br>
 
 <%= link_to t('.back', :default => t("helpers.links.back")),
               acessos_path, :class => 'btn btn-default'  %>
