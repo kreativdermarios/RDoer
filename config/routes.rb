@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :acessos
   resources :clientes 
 
-  get  'dados/:id_acesso/:url' => 'acessos#getdatasites'
+  get  'dados/:id_acesso/:url/:hostname' => 'acessos#getdatasites'
 
 
 

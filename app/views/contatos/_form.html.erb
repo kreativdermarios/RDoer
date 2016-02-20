@@ -25,7 +25,7 @@
   </div>
   <div class="field">
     <%= f.label :acesso_id %><br>
-    <%= f.text_field :acesso_id %>
+    <%= f.collection_select(:acesso_id, Acesso.all, :id, :id_acesso, prompt: true) %>
   </div>
   <div class="actions">
     <%= f.submit %>
