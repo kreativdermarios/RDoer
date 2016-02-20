@@ -14730,3 +14730,18 @@ Started GET "/assets/welcome.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde
 
 
 Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2016-02-19 21:51:51 -0200
+
+
+Started GET "/acessos" for ::1 at 2016-02-19 22:44:42 -0200
+Processing by AcessosController#index as HTML
+  [1m[36mAcesso Load (0.8ms)[0m  [1mSELECT "acessos".* FROM "acessos"[0m
+  Rendered acessos/index.html.erb within layouts/application (44.1ms)
+Completed 200 OK in 174ms (Views: 135.7ms | ActiveRecord: 29.1ms)
+
+
+Started GET "/acessos/new" for ::1 at 2016-02-19 22:44:50 -0200
+Processing by AcessosController#new as HTML
+  [1m[35mCliente Load (0.4ms)[0m  SELECT "clientes".* FROM "clientes"
+  Rendered acessos/_form.html.erb (32.4ms)
+  Rendered acessos/new.html.erb within layouts/application (34.8ms)
+Completed 200 OK in 143ms (Views: 125.4ms | ActiveRecord: 17.2ms)

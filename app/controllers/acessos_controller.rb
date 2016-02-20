@@ -23,7 +23,9 @@ class AcessosController < ApplicationController
 
   def getdatasites
 
-    t = Acesso.create(id_acesso: params[:id_acesso], url: params[:urlsite])
+    a = Cliente.where(site:"www.inkor.com.br")
+
+    t = Acesso.create(id_acesso: params[:id_acesso], url: params[:urlsite], a.id)
 
   end
 
