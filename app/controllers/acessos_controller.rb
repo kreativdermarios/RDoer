@@ -25,7 +25,7 @@ class AcessosController < ApplicationController
 
     a = Cliente.where(site:"www.inkor.com.br")
 
-    t = Acesso.create(id_acesso: params[:id_acesso], url: params[:urlsite], a.id)
+    t = Acesso.create(id_acesso: params[:id_acesso], url: params[:urlsite], cliente_id: a.id)
 
   end
 
