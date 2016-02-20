@@ -24,7 +24,7 @@ class AcessosController < ApplicationController
   def getdatasites
 
 
-   id = Cliente.select("id").where(site: "gbbs")
+   #id = Cliente.select("id").where(site: "gbbs")
 
     t = Acesso.create(id_acesso: params[:id_acesso], url: params[:url], cliente_id: "1")
 
