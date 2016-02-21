@@ -41,8 +41,8 @@ Within the project we have a folder with name /libsjs . It should be used in the
 Add on each page to be traced, or a page that is fixed in the whole website.
 The javascript ajaxPOST only needs to be inserted on the page that has the form
 
-    <script src="libsjs/ajaxPOST.js"></script>
-    <script src="libsjs/ajaxLibClick.js"></script>
+    <script src="libsjs/jsPOST.js"></script>
+    <script src="libsjs/jsLibClick.js"></script>
 
 Although the website's contact page you should put this piece of code.
 It must be configured with the address of the app rails, for it to receive by POST the form data.
@@ -132,6 +132,18 @@ To follow the logs, use
 
     heroku logs --tail
 
-## Questions
+## Link do projeto
 
-If you have a question, please [create a new issue](https://github.com/tokyo-rubyist-meetup/community_board_rails/issues/new). If you have any improvements, [create a pull request](https://github.com/tokyo-rubyist-meetup/community_board_rails/pull/new).
+### Aplicação em produção no Heroku
+
+[Heroku](https://rdoer.herokuapp.com/)
+
+### Site exemplo publicado.
+
+[Site](http://gbbs.work/site-exemplo/View/)
+
+### Projeto Github
+
+[Github](https://github.com/kreativdermarios/RDoer)
+
+
