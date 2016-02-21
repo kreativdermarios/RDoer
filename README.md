@@ -48,7 +48,8 @@ The javascript ajaxPOST only needs to be inserted on the page that has the form
     <script src="libsjs/ajaxLibClick.js"></script>
 
 Although the website's contact page you should put this piece of code.
-It must be configured with the address of the app, for it to receive by post the form data
+It must be configured with the address of the app rails, for it to receive by POST the form data.
+You must also have a "div" with id = "load_consulta" to show the result of the form submission.
 
     <script>
     $( "form" ).submit(function( event ) {
@@ -60,6 +61,10 @@ It must be configured with the address of the app, for it to receive by post the
 
     });
     </script>
+
+To treat clicks on links, you should put this function caller in all href tags as shown below
+
+    <a href=\"index.php\" onclick=\"buscaClick('index');\" >Home</a>
 
 Assuming you have install RVM, you will asked to trust the .rvm file. Type y to trust it.
 
