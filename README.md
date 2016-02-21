@@ -1,42 +1,41 @@
-# Rastreamento de Usuários
+# Lead Tracking
 ![rdoer](http://gbbs.work/site-projeto/View/capa.jpg)
 
-This is a [Heroku Buildpack](http://devcenter.heroku.com/articles/buildpacks) for Ruby, Rack, and Rails apps. It uses [Bundler](http://gembundler.com) for dependency management.
+This is a Ruby on Rails Application for Users Trace
 
-This buildpack requires 64-bit Linux.
+This project requires 64-bit Linux.
 
 ## Usage
 
 ### Ruby
 
-Example Usage:
+**Ruby 2.2.3 or higher is required**
 
-    $ ls
-    Gemfile Gemfile.lock
+If you don't know what Ruby version you have, it probably isn't recent enough. From the command line, you can check what version you are running with `ruby -v`.
 
-    $ heroku create --buildpack https://github.com/heroku/heroku-buildpack-ruby.git
+The easiest way to use a newer version of Ruby is [RVM](https://rvm.io/), which allows you to manage multiple Ruby versions.
 
-    $ git push heroku master
-    ...
-    -----> Heroku receiving push
-    -----> Fetching custom buildpack
-    -----> Ruby app detected
-    -----> Installing dependencies using Bundler version 1.1.rc
-           Running: bundle install --without development:test --path vendor/bundle --deployment
-           Fetching gem metadata from http://rubygems.org/..
-           Installing rack (1.3.5)
-           Using bundler (1.1.rc)
-           Your bundle is complete! It was installed into ./vendor/bundle
-           Cleaning up the bundler cache.
-    -----> Discovering process types
-           Procfile declares types -> (none)
-           Default types for Ruby  -> console, rake
+Install RVM by pasting the following into your terminal
 
-The buildpack will detect your app as Ruby if it has a `Gemfile` and `Gemfile.lock` files in the root directory. It will then proceed to run `bundle install` after setting up the appropriate environment for [ruby](http://ruby-lang.org) and [Bundler](http://gembundler.com).
+    curl -L https://get.rvm.io | bash -s stable --ruby
 
-#### Bundler
+Install dependencies
 
-For non-windows `Gemfile.lock` files, the `--deployment` flag will be used. In the case of windows, the Gemfile.lock will be deleted and Bundler will do a full resolve so native gems are handled properly. The `vendor/bundle` directory is cached between builds to allow for faster `bundle install` times. `bundle clean` is used to ensure no stale gems are stored between builds.
+    rvm requirements
+
+Install Ruby 2.0.0
+
+    rvm install 2.0.0
+
+Config
+==================
+
+### Required
+
+| Name |  Version |
+| :--: | :---: |
+| [Ruby][ruby] | ruby 2.2.3 |
+| [Ruby on Rails][rails] | Rails 4.2.4 or newer |
 
 ### Rails 2
 
