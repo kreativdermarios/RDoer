@@ -62,20 +62,27 @@ You must also have a "div" with id = "load_consulta" to show the result of the f
     });
     </script>
 
-To treat clicks on links, you should put this function caller in all href tags as shown below
+To treat clicks on links, you should put this function caller in all href tags as shown below.
+The buscaClick function has only one parameter, and it must be passed the address to be saved in 
+the database by the rails app. This flexibility in customizing the name of clikes and links. 
+Since the full address of the site is already saved in the app to the customer's initial configuration.
 
     <a href=\"index.php\" onclick=\"buscaClick('index');\" >Home</a>
 
-Assuming you have install RVM, you will asked to trust the .rvm file. Type y to trust it.
+In any way you should put "/" or ":" in this parameter, the information is sent by GET and these characters cause error in the delivery of information.
+
+The decision to use GET was taken from the idea of flexibility in the form of share. And the ease of sharing URL. You can submiter the information in the database without the use of click the link.
+
+The diversity of technology used in existing websites on the internet requires us to have a very flexible we js library.
 
     ==============================================================================
     = NOTICE                                                                     =
     ==============================================================================
-    = RVM has encountered a new or modified .rvmrc file in the current directory =
-    = This is a shell script and therefore may contain any shell commands.       =
+    = The implementation sending the click information by POST is in development =
+    = and ensures the idea of sending flexibility.                               =
     =                                                                            =
-    = Examine the contents of this file carefully to be sure the contents are    =
-    = safe before trusting it! ( Choose v[iew] below to view the contents )      =
+    = The diversity of technology used in existing websites on the internet      =
+    = requires us to have a very flexible js library.                            =
     ==============================================================================
     Do you wish to trust this .rvmrc file? (/tmp/community_board_rails/.rvmrc)
     y[es], n[o], v[iew], c[ancel]> y
