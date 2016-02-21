@@ -1,5 +1,5 @@
 # Lead Tracking
-![rdoer](http://gbbs.work/site-projeto/View/capa.jpg)
+![rdoer](http://gbbs.work/images/capa.jpg)
 
 This is a Ruby on Rails Application for Users Trace
 
