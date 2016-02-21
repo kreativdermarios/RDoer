@@ -47,9 +47,19 @@ The javascript ajaxPOST only needs to be inserted on the page that has the form
     <script src="libsjs/ajaxPOST.js"></script>
     <script src="libsjs/ajaxLibClick.js"></script>
 
-Switch to the application directory.
+Although the website's contact page you should put this piece of code.
+It must be configured with the address of the app, for it to receive by post the form data
 
-    cd community_board_rails
+    <script>
+    $( "form" ).submit(function( event ) {
+
+        var url = 'https://rdoer.herokuapp.com/contatos';
+        $.get(url, function(dataReturn) {
+          $('#load_consulta').html(dataReturn);
+        });
+
+    });
+    </script>
 
 Assuming you have install RVM, you will asked to trust the .rvm file. Type y to trust it.
 
