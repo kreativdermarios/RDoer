@@ -24,6 +24,7 @@ class ContatosController < ApplicationController
   # POST /contatos
   # POST /contatos.json
   def create
+
     @contato = Contato.new(contato_params)
 
     respond_to do |format|
@@ -69,6 +70,11 @@ class ContatosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def contato_params
+
+      cookie = params[:acesso_id]
+      acesso = Acesso.select("id").where(id_acesso:'internalta_11616154348').first
+      params[:acesso_id] = cookie.id
+
       params.permit(:nome, :email, :mesage, :acesso_id)
     end
 end
