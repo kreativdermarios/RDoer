@@ -27,9 +27,6 @@ Install Ruby 2.2.3
 
     rvm install 2.2.3
 
-Config
-==================
-
 ### Required
 
 | Name |  Version |
@@ -85,9 +82,9 @@ The diversity of technology used in existing websites on the internet requires u
     = requires us to have a very flexible js library.                            =
     ==============================================================================
 
-### Getting started
+## Getting started
 
-## Rails config
+### Rails config
 
 Install the bundler gem
 
