@@ -3,7 +3,7 @@
 
 This is a Ruby on Rails Application for Users Trace
 
-This project requires 64-bit Linux.
+One of the potential ways of identifying and verifying clients Where visitors to our site access and seek INFORMATION .
 
 ## Usage
 
@@ -11,9 +11,9 @@ This project requires 64-bit Linux.
 
 **Ruby 2.2.3 or higher is required**
 
-If you don't know what Ruby version you have, it probably isn't recent enough. From the command line, you can check what version you are running with `ruby -v`.
+If you do not know what Ruby version you have , follow as INSTRUCTIONS . From the command line , you can check what version you are running with ` ruby -V` .
 
-The easiest way to use a newer version of Ruby is [RVM](https://rvm.io/), which allows you to manage multiple Ruby versions.
+The easiest way to use the newer version of Ruby is [ CABG ] ( https://rvm.io/ ) , Which Allows you to manage multiple Ruby versions .
 
 Install RVM by pasting the following into your terminal
 
@@ -23,9 +23,9 @@ Install dependencies
 
     rvm requirements
 
-Install Ruby 2.0.0
+Install Ruby 2.2.3
 
-    rvm install 2.0.0
+    rvm install 2.2.3
 
 Config
 ==================
@@ -37,137 +37,79 @@ Config
 | [Ruby][ruby] | ruby 2.2.3 |
 | [Ruby on Rails][rails] | Rails 4.2.4 or newer |
 
-### Rails 2
+## Setup the Library Javascript
 
-Example Usage:
+Within the project we have a folder with name /libsjs . It should be used in the web site server that will be tracked.The library, send information to the application, but for this need properly configured.
 
-    $ ls
-    app  config  db  doc  Gemfile  Gemfile.lock  lib  log  public  Rakefile  README  script  test  tmp  vendor
+Add on each page to be traced:
 
-    $ ls config/environment.rb
-    config/environment.rb
+    <script src="libsjs/ajaxPOST.js"></script>
+    <script src="libsjs/ajaxLibClick.js"></script>
 
-    $ heroku create --buildpack https://github.com/heroku/heroku-buildpack-ruby.git
+Switch to the application directory.
 
-    $ git push heroku master
-    ...
-    -----> Heroku receiving push
-    -----> Ruby/Rails app detected
-    -----> Installing dependencies using Bundler version 1.1.rc
-    ...
-    -----> Writing config/database.yml to read from DATABASE_URL
-    -----> Rails plugin injection
-           Injecting rails_log_stdout
-    -----> Discovering process types
-           Procfile declares types      -> (none)
-           Default types for Ruby/Rails -> console, rake, web, worker
+    cd community_board_rails
 
-The buildpack will detect your app as a Rails 2 app if it has a `environment.rb` file in the `config`  directory.
+Assuming you have install RVM, you will asked to trust the .rvm file. Type y to trust it.
 
-#### Rails Log STDOUT
-A [rails_log_stdout](http://github.com/ddollar/rails_log_stdout) is installed by default so Rails' logger will log to STDOUT and picked up by Heroku's [logplex](http://github.com/heroku/logplex).
+    ==============================================================================
+    = NOTICE                                                                     =
+    ==============================================================================
+    = RVM has encountered a new or modified .rvmrc file in the current directory =
+    = This is a shell script and therefore may contain any shell commands.       =
+    =                                                                            =
+    = Examine the contents of this file carefully to be sure the contents are    =
+    = safe before trusting it! ( Choose v[iew] below to view the contents )      =
+    ==============================================================================
+    Do you wish to trust this .rvmrc file? (/tmp/community_board_rails/.rvmrc)
+    y[es], n[o], v[iew], c[ancel]> y
 
-#### Auto Injecting Plugins
+Install the bundler gem
 
-Any vendored plugin can be stopped from being installed by creating the directory it's installed to in the slug. For instance, to prevent rails_log_stdout plugin from being injected, add `vendor/plugins/rails_log_stdout/.gitkeep` to your git repo.
+    gem install bundler
 
-### Rails 3
+Install the bundled gems
 
-Example Usage:
+    bundle install
 
-    $ ls
-    app  config  config.ru  db  doc  Gemfile  Gemfile.lock  lib  log  Procfile  public  Rakefile  README  script  tmp  vendor
+Setup the database
 
-    $ ls config/application.rb
-    config/application.rb
+    rake db:setup
 
-    $ heroku create --buildpack https://github.com/heroku/heroku-buildpack-ruby.git
+Run the specs to make sure everything is working
 
-    $ git push heroku master
-    -----> Heroku receiving push
-    -----> Ruby/Rails app detected
-    -----> Installing dependencies using Bundler version 1.1.rc
-           Running: bundle install --without development:test --path vendor/bundle --deployment
-           ...
-    -----> Writing config/database.yml to read from DATABASE_URL
-    -----> Preparing app for Rails asset pipeline
-           Running: rake assets:precompile
-    -----> Rails plugin injection
-           Injecting rails_log_stdout
-           Injecting rails3_serve_static_assets
-    -----> Discovering process types
-           Procfile declares types      -> web
-           Default types for Ruby/Rails -> console, rake, worker
+    rake
 
-The buildpack will detect your apps as a Rails 3 app if it has an `application.rb` file in the `config` directory.
+You can start up the local server with
 
-#### Assets
+    rails s
 
-To enable static assets being served on the dyno, [rails3_serve_static_assets](http://github.com/pedro/rails3_serve_static_assets) is installed by default. If the [execjs gem](http://github.com/sstephenson/execjs) is detected then [node.js](http://github.com/joyent/node) will be vendored. The `assets:precompile` rake task will get run if no `public/manifest.yml` is detected.  See [this article](http://devcenter.heroku.com/articles/rails31_heroku_cedar) on how rails 3.1 works on cedar.
+Now you should be able to view the application at http://localhost:3000/ in your web browser.
 
-## Documentation
+## Deploy application to Heroku
 
-For more information about using Ruby and buildpacks on Heroku, see these Dev Center articles:
+[Heroku](http://www.heroku.com/) is a platform for hosting web applications. Create a free account at Heroku if you don't already have one. Once you've done that, you can create and deploy a heroku application with
 
-- [Heroku Ruby Support](https://devcenter.heroku.com/articles/ruby-support)
-- [Getting Started with Ruby on Heroku](https://devcenter.heroku.com/articles/getting-started-with-ruby)
-- [Getting Started with Rails 4 on Heroku](https://devcenter.heroku.com/articles/getting-started-with-rails4)
-- [Buildpacks](https://devcenter.heroku.com/articles/buildpacks)
-- [Buildpack API](https://devcenter.heroku.com/articles/buildpack-api)
+    heroku create
 
-## Hacking
+Then push it to heroku with
 
-To use this buildpack, fork it on Github.  Push up changes to your fork, then create a test app with `--buildpack <your-github-url>` and push to it.
+    git push heroku master
 
-To change the vendored binaries for Bundler, [Node.js](http://github.com/joyent/node), and rails plugins, use the rake tasks provided by the `Rakefile`. You'll need an S3-enabled AWS account and a bucket to store your binaries in as well as the [vulcan](http://github.com/heroku/vulcan) gem to build the binaries on heroku.
+Setup the database with
 
-For example, you can change the vendored version of Bundler to 1.1.rc.
+    heroku rake db:setup
 
-First you'll need to build a Heroku-compatible version of Node.js:
+Now access your newly created application at the URL that the heroku create command output.
 
-    $ export AWS_ID=xxx AWS_SECRET=yyy S3_BUCKET=zzz
-    $ s3 create $S3_BUCKET
-    $ rake gem:install[bundler,1.1.rc]
+To make debugging easier, you can increase the log level with
 
-Open `lib/language_pack/ruby.rb` in your editor, and change the following line:
+    heroku config:add LOG_LEVEL=DEBUG
 
-    BUNDLER_VERSION = "1.1.rc"
+To follow the logs, use
 
-Open `lib/language_pack/base.rb` in your editor, and change the following line:
+    heroku logs --tail
 
-    VENDOR_URL = "https://s3.amazonaws.com/zzz"
+## Questions
 
-Commit and push the changes to your buildpack to your Github fork, then push your sample app to Heroku to test.  You should see:
-
-    -----> Installing dependencies using Bundler version 1.1.rc
-
-NOTE: You'll need to vendor the plugins, node, Bundler, and libyaml by running the rake tasks for the buildpack to work properly.
-
-### Testing
-
-The tests on this buildpack are written in Rspec to allow the use of
-`focused: true`. Parallelization of testing is provided by
-https://github.com/grosser/parallel_tests this lib spins up an arbitrary
-number of processes and running a different test file in each process,
-it does not parallelize tests within a test file. To run the tests: clone the repo, then `bundle install` then clone the test fixtures by running:
-
-```sh
-$ bundle exec hatchet install
-```
-
-then go to [hatchet](https://github.com/heroku/hatchet) repo and follow the
-instructions to set it up.
-
-Now run the tests:
-
-```sh
-$ bundle exec parallel_rspec -n 6 spec/
-```
-
-If you don't want to run them in parallel you can still:
-
-```sh
-$ bundle exec rake spec
-```
-
-Now go take a nap or do something for a really long time.
+If you have a question, please [create a new issue](https://github.com/tokyo-rubyist-meetup/community_board_rails/issues/new). If you have any improvements, [create a pull request](https://github.com/tokyo-rubyist-meetup/community_board_rails/pull/new).
