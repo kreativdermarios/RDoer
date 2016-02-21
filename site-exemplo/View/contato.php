@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta content="text/html" charset="UTF-8">
@@ -12,8 +11,8 @@
     <script src="../bootstrap-3.3.1/dist/js/bootstrap.js"></script>
     <script src="../bootstrap-3.3.1/dist/js/bootstrap-combobox.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
-    <script src="libsjs/jsPOST.js"></script>
     <script src="libsjs/jsLibClick.js"></script>
+    <script src="libsjs/jsPOST.js"></script>
 
     <script>
     $( "form" ).submit(function( event ) {
@@ -80,5 +79,6 @@
     </div><!--/.container-fluid -->
     
   </div> <!-- /container -->
+  <div id="load_consulta"></div>
   </body>
 </html>

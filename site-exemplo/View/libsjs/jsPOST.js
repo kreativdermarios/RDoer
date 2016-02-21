@@ -11,7 +11,7 @@ $(document).ready(function() {
 		    'nome'   	 : $('input[id=nome]').val(),
 		    'email'  	 : $('input[id=email]').val(),
 		    'mesage'  	 : $('textarea[id=mesage]').val()
-		}
+		};
 
 		// process the form
 		$.ajax({
