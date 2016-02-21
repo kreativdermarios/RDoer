@@ -1,0 +1,176 @@
+20150423 115658 - oi
+20150423 115706 - produtosfdsfsf 264,241,265,266,267,269,291,292,389,390,391,
+20150423 115721 - 30<br>
+20150423 115721 - 230<br>
+20150423 115721 - 0<br>
+20150423 115721 - 10<br>
+20150423 115721 - dentro 230
+20150423 115721 - produtosfdsfsf 264,241,265,266,267,269,291,292,389,390,391,
+20150423 115721 - dentro do service depois dos ifs
+20150423 115721 - repsP -> AND p.cod_representante = 10 prodsA -> AND p.CodProduto IN (264,241,265,266,267,269,291,292,389,390,391) prods -> CodProduto IN ( 264,241,265,266,267,269,291,292,389,390,391 ) reps -> AND cod_representante = 10 reps_ -> cod_rep = 10 AND  reps3 ->  dias -> 30
+20150423 115725 - PDOStatement Object
+(
+    [queryString] => SELECT cod, razao_social, u.ultimaData
+                                         FROM sospic.cad_clientes c
+                                        
+                                         LEFT JOIN (
+                                         SELECT p.cod_cli
+                                         FROM pedidos p
+                                         WHERE TO_DAYS(NOW()) - TO_DAYS(p.datas) <= 30
+                                         AND p.cod_representante = 10
+                                         AND p.CodProduto IN (264,241,265,266,267,269,291,292,389,390,391)
+                                         GROUP BY cod_cli
+                                         ) as v ON (v.cod_cli = c.cod)
+                                        
+                                         LEFT JOIN (
+                                         SELECT cod_cli, max(datas) as ultimaData
+                                         FROM pedidos
+                                         WHERE 
+                                         CodProduto IN ( 264,241,265,266,267,269,291,292,389,390,391 )
+                                         
+                                         AND cod_representante = 10
+                                         GROUP BY cod_cli
+                                         ) as u ON (u.cod_cli = c.cod)
+                                        
+                                        WHERE cod_rep = 10 AND  v.cod_cli IS NULL
+)
+
+20150423 115852 - produtosfdsfsf 152,153,154,156,183,237,239,244,182,270,278,218,219,220,221,238,240,284,285,386,272,275,279,283,281,274,282,277,
+20150423 115858 - 30<br>
+20150423 115858 - 184<br>
+20150423 115858 - 0<br>
+20150423 115858 - 10<br>
+20150423 115858 - dentro 184
+20150423 115858 - produtosfdsfsf 152,153,154,156,183,237,239,244,182,270,278,218,219,220,221,238,240,284,285,386,272,275,279,283,281,274,282,277,
+20150423 115858 - dentro do service depois dos ifs
+20150423 115858 - repsP -> AND p.cod_representante = 10 prodsA -> AND p.CodProduto IN (152,153,154,156,183,237,239,244,182,270,278,218,219,220,221,238,240,284,285,386,272,275,279,283,281,274,282,277) prods -> CodProduto IN ( 152,153,154,156,183,237,239,244,182,270,278,218,219,220,221,238,240,284,285,386,272,275,279,283,281,274,282,277 ) reps -> AND cod_representante = 10 reps_ -> cod_rep = 10 AND  reps3 ->  dias -> 30
+20150423 115859 - PDOStatement Object
+(
+    [queryString] => SELECT cod, razao_social, u.ultimaData
+                                         FROM sospic.cad_clientes c
+                                        
+                                         LEFT JOIN (
+                                         SELECT p.cod_cli
+                                         FROM pedidos p
+                                         WHERE TO_DAYS(NOW()) - TO_DAYS(p.datas) <= 30
+                                         AND p.cod_representante = 10
+                                         AND p.CodProduto IN (152,153,154,156,183,237,239,244,182,270,278,218,219,220,221,238,240,284,285,386,272,275,279,283,281,274,282,277)
+                                         GROUP BY cod_cli
+                                         ) as v ON (v.cod_cli = c.cod)
+                                        
+                                         LEFT JOIN (
+                                         SELECT cod_cli, max(datas) as ultimaData
+                                         FROM pedidos
+                                         WHERE 
+                                         CodProduto IN ( 152,153,154,156,183,237,239,244,182,270,278,218,219,220,221,238,240,284,285,386,272,275,279,283,281,274,282,277 )
+                                         
+                                         AND cod_representante = 10
+                                         GROUP BY cod_cli
+                                         ) as u ON (u.cod_cli = c.cod)
+                                        
+                                        WHERE cod_rep = 10 AND  v.cod_cli IS NULL
+)
+
+20150423 115913 - 30<br>
+20150423 115913 - 184<br>
+20150423 115913 - 0<br>
+20150423 115913 - 15<br>
+20150423 115913 - dentro 184
+20150423 115913 - produtosfdsfsf 152,153,154,156,183,237,239,244,182,270,278,218,219,220,221,238,240,284,285,386,272,275,279,283,281,274,282,277,
+20150423 115913 - dentro do service depois dos ifs
+20150423 115913 - repsP -> AND p.cod_representante = 15 prodsA -> AND p.CodProduto IN (152,153,154,156,183,237,239,244,182,270,278,218,219,220,221,238,240,284,285,386,272,275,279,283,281,274,282,277) prods -> CodProduto IN ( 152,153,154,156,183,237,239,244,182,270,278,218,219,220,221,238,240,284,285,386,272,275,279,283,281,274,282,277 ) reps -> AND cod_representante = 15 reps_ -> cod_rep = 15 AND  reps3 ->  dias -> 30
+20150423 115914 - PDOStatement Object
+(
+    [queryString] => SELECT cod, razao_social, u.ultimaData
+                                         FROM sospic.cad_clientes c
+                                        
+                                         LEFT JOIN (
+                                         SELECT p.cod_cli
+                                         FROM pedidos p
+                                         WHERE TO_DAYS(NOW()) - TO_DAYS(p.datas) <= 30
+                                         AND p.cod_representante = 15
+                                         AND p.CodProduto IN (152,153,154,156,183,237,239,244,182,270,278,218,219,220,221,238,240,284,285,386,272,275,279,283,281,274,282,277)
+                                         GROUP BY cod_cli
+                                         ) as v ON (v.cod_cli = c.cod)
+                                        
+                                         LEFT JOIN (
+                                         SELECT cod_cli, max(datas) as ultimaData
+                                         FROM pedidos
+                                         WHERE 
+                                         CodProduto IN ( 152,153,154,156,183,237,239,244,182,270,278,218,219,220,221,238,240,284,285,386,272,275,279,283,281,274,282,277 )
+                                         
+                                         AND cod_representante = 15
+                                         GROUP BY cod_cli
+                                         ) as u ON (u.cod_cli = c.cod)
+                                        
+                                        WHERE cod_rep = 15 AND  v.cod_cli IS NULL
+)
+
+20150423 115920 - 300<br>
+20150423 115920 - 184<br>
+20150423 115920 - 0<br>
+20150423 115920 - 15<br>
+20150423 115920 - dentro 184
+20150423 115920 - produtosfdsfsf 152,153,154,156,183,237,239,244,182,270,278,218,219,220,221,238,240,284,285,386,272,275,279,283,281,274,282,277,
+20150423 115920 - dentro do service depois dos ifs
+20150423 115920 - repsP -> AND p.cod_representante = 15 prodsA -> AND p.CodProduto IN (152,153,154,156,183,237,239,244,182,270,278,218,219,220,221,238,240,284,285,386,272,275,279,283,281,274,282,277) prods -> CodProduto IN ( 152,153,154,156,183,237,239,244,182,270,278,218,219,220,221,238,240,284,285,386,272,275,279,283,281,274,282,277 ) reps -> AND cod_representante = 15 reps_ -> cod_rep = 15 AND  reps3 ->  dias -> 300
+20150423 115921 - PDOStatement Object
+(
+    [queryString] => SELECT cod, razao_social, u.ultimaData
+                                         FROM sospic.cad_clientes c
+                                        
+                                         LEFT JOIN (
+                                         SELECT p.cod_cli
+                                         FROM pedidos p
+                                         WHERE TO_DAYS(NOW()) - TO_DAYS(p.datas) <= 300
+                                         AND p.cod_representante = 15
+                                         AND p.CodProduto IN (152,153,154,156,183,237,239,244,182,270,278,218,219,220,221,238,240,284,285,386,272,275,279,283,281,274,282,277)
+                                         GROUP BY cod_cli
+                                         ) as v ON (v.cod_cli = c.cod)
+                                        
+                                         LEFT JOIN (
+                                         SELECT cod_cli, max(datas) as ultimaData
+                                         FROM pedidos
+                                         WHERE 
+                                         CodProduto IN ( 152,153,154,156,183,237,239,244,182,270,278,218,219,220,221,238,240,284,285,386,272,275,279,283,281,274,282,277 )
+                                         
+                                         AND cod_representante = 15
+                                         GROUP BY cod_cli
+                                         ) as u ON (u.cod_cli = c.cod)
+                                        
+                                        WHERE cod_rep = 15 AND  v.cod_cli IS NULL
+)
+
+20150423 115928 - 300<br>
+20150423 115928 - 184<br>
+20150423 115928 - 1<br>
+20150423 115928 - 15<br>
+20150423 115928 - dentro do service depois dos ifs
+20150423 115928 - repsP -> AND p.cod_representante = 15 prodsA -> AND p.CodProduto = 1 prods -> CodProduto = 1 reps -> AND cod_representante = 15 reps_ -> cod_rep = 15 AND  reps3 ->  dias -> 300
+20150423 115929 - PDOStatement Object
+(
+    [queryString] => SELECT cod, razao_social, u.ultimaData
+                                         FROM sospic.cad_clientes c
+                                        
+                                         LEFT JOIN (
+                                         SELECT p.cod_cli
+                                         FROM pedidos p
+                                         WHERE TO_DAYS(NOW()) - TO_DAYS(p.datas) <= 300
+                                         AND p.cod_representante = 15
+                                         AND p.CodProduto = 1
+                                         GROUP BY cod_cli
+                                         ) as v ON (v.cod_cli = c.cod)
+                                        
+                                         LEFT JOIN (
+                                         SELECT cod_cli, max(datas) as ultimaData
+                                         FROM pedidos
+                                         WHERE 
+                                         CodProduto = 1
+                                         
+                                         AND cod_representante = 15
+                                         GROUP BY cod_cli
+                                         ) as u ON (u.cod_cli = c.cod)
+                                        
+                                        WHERE cod_rep = 15 AND  v.cod_cli IS NULL
+)
+

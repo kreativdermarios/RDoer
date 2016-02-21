@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<buildpath>
+	<buildpathentry kind="src" path="DAO/clientes"/>
+	<buildpathentry kind="src" path="DAO/global"/>
+	<buildpathentry kind="src" path="PDO"/>
+	<buildpathentry kind="src" path="Services/clientes"/>
+	<buildpathentry kind="src" path="Services/global"/>
+	<buildpathentry kind="src" path="View"/>
+	<buildpathentry kind="con" path="org.eclipse.php.core.LANGUAGE"/>
+</buildpath>

@@ -41,7 +41,8 @@ Config
 
 Within the project we have a folder with name /libsjs . It should be used in the web site server that will be tracked.The library, send information to the application, but for this need properly configured.
 
-Add on each page to be traced:
+Add on each page to be traced, or a page that is fixed in the whole website.
+The javascript ajaxPOST only needs to be inserted on the page that has the form
 
     <script src="libsjs/ajaxPOST.js"></script>
     <script src="libsjs/ajaxLibClick.js"></script>
