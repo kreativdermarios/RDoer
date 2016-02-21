@@ -84,8 +84,10 @@ The diversity of technology used in existing websites on the internet requires u
     = The diversity of technology used in existing websites on the internet      =
     = requires us to have a very flexible js library.                            =
     ==============================================================================
-    Do you wish to trust this .rvmrc file? (/tmp/community_board_rails/.rvmrc)
-    y[es], n[o], v[iew], c[ancel]> y
+
+### Getting started
+
+## Rails config
 
 Install the bundler gem
 
